@@ -10,7 +10,7 @@ const Login = () => {
 
     const handleLogin = async () => {
         try {
-            const { data } = await axios.post("http://localhost:8080/api/auth/login", { username, password });
+            const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, { username, password });
 
             localStorage.setItem("token", data.token);
             localStorage.setItem("role", data.role);

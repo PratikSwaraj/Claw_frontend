@@ -8,7 +8,7 @@ const ResignationForm = () => {
 
     const handleSubmit = async () => {
         try {
-            await axios.post("http://localhost:8080/api/resignation/submit", { employeeName, lastWorkingDay, reason });
+            await axios.post(`${process.env.REACT_APP_API_URL}/resignation/submit`, { employeeName, lastWorkingDay, reason });
             alert("Resignation submitted!");
         } catch (error) {
             alert("Error submitting resignation");

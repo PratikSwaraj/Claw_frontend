@@ -6,7 +6,7 @@ const HRDashboard = () => {
 
     useEffect(() => {
         const fetchRequests = async () => {
-            const { data } = await axios.get("http://localhost:8080/api/resignation/all");
+            const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/resignation/all`);
             setRequests(data);
         };
         fetchRequests();
